@@ -15,4 +15,11 @@ class ProductController extends Controller
         // productsという変数名でBladeテンプレートに渡す
         ->with('products',Product::get());
     }
+
+    public function show($id)
+    {
+        return view('product.show')
+        // Eloquentのfindメソッドを用いて、引数にidを指定しそのIDに紐付くレコードを取得
+        ->with('product',Product::find($id));
+    }
 }
