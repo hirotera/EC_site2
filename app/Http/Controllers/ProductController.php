@@ -13,13 +13,13 @@ class ProductController extends Controller
         // withメソッドではBladeテンプレートに値を渡す
         // Eloquentのgetメソッドを用いてproductsテーブルの全データ取得し、
         // productsという変数名でBladeテンプレートに渡す
-        ->with('products',Product::get());
+            ->with('products', Product::get());
     }
 
     public function show($id)
     {
         return view('product.show')
         // Eloquentのfindメソッドを用いて、引数にidを指定しそのIDに紐付くレコードを取得
-        ->with('product',Product::find($id));
+            ->with('product', Product::find($id));
     }
 }
